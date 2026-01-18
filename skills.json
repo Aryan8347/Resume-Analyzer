@@ -1,0 +1,291 @@
+{
+    "Python": [
+        "python",
+        "py",
+        "python3"
+    ],
+    "Java": [
+        "java",
+        "j2ee"
+    ],
+    "JavaScript": [
+        "javascript",
+        "js",
+        "es6"
+    ],
+    "TypeScript": [
+        "typescript",
+        "ts"
+    ],
+    "SQL": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "postgres",
+        "mssql"
+    ],
+    "FastAPI": [
+        "fastapi"
+    ],
+    "Flask": [
+        "flask"
+    ],
+    "Django": [
+        "django"
+    ],
+    "React": [
+        "react",
+        "reactjs"
+    ],
+    "Node.js": [
+        "node",
+        "nodejs",
+        "node.js"
+    ],
+    "Docker": [
+        "docker"
+    ],
+    "Kubernetes": [
+        "k8s",
+        "kubernetes"
+    ],
+    "AWS": [
+        "aws",
+        "amazon web services"
+    ],
+    "C++": [
+        "c++",
+        "cpp"
+    ],
+    "Pandas": [
+        "pandas"
+    ],
+    "Excel": [
+        "excel",
+        "ms excel"
+    ],
+    "Go": [
+        "go",
+        "golang"
+    ],
+    "HTML": [
+        "html",
+        "html5"
+    ],
+    "CSS": [
+        "css",
+        "css3"
+    ],
+    "Linux": [
+        "linux",
+        "ubuntu",
+        "bash",
+        "shell"
+    ],
+    "NumPy": [
+        "numpy"
+    ],
+    "Matplotlib": [
+        "matplotlib",
+        "pyplot"
+    ],
+    "Scikit-learn": [
+        "scikit-learn",
+        "sklearn"
+    ],
+    "PyTorch": [
+        "pytorch",
+        "torch"
+    ],
+    "TensorFlow": [
+        "tensorflow",
+        "tf"
+    ],
+    "Keras": [
+        "keras"
+    ],
+    "VS Code": [
+        "vs code",
+        "vscode",
+        "visual studio code"
+    ],
+    "Git": [
+        "git"
+    ],
+    "GitHub": [
+        "github"
+    ],
+    "GitLab": [
+        "gitlab"
+    ],
+    "JIRA": [
+        "jira"
+    ],
+    "Postman": [
+        "postman"
+    ],
+    "Jenkins": [
+        "jenkins"
+    ],
+    "IntelliJ IDEA": [
+        "intellij",
+        "intellij idea"
+    ],
+    "Figma": [
+        "figma"
+    ],
+    "Android Studio": [
+        "android studio"
+    ],
+    "Visual Studio": [
+        "visual studio",
+        "vs"
+    ],
+    "Eclipse": [
+        "eclipse"
+    ],
+    "NetBeans": [
+        "netbeans"
+    ],
+    "PyCharm": [
+        "pycharm"
+    ],
+    "WebStorm": [
+        "webstorm"
+    ],
+    "Xcode": [
+        "xcode"
+    ],
+    "Vim": [
+        "vim"
+    ],
+    "Emacs": [
+        "emacs"
+    ],
+    "Sublime Text": [
+        "sublime text",
+        "sublime"
+    ],
+    "Atom": [
+        "atom"
+    ],
+    "Notepad++": [
+        "notepad++",
+        "notepad plus plus"
+    ],
+    "CircleCI": [
+        "circleci"
+    ],
+    "Travis CI": [
+        "travis ci",
+        "travis"
+    ],
+    "GitLab CI": [
+        "gitlab ci",
+        "gitlab ci/cd"
+    ],
+    "Azure DevOps": [
+        "azure devops",
+        "ado"
+    ],
+    "Ansible": [
+        "ansible"
+    ],
+    "Terraform": [
+        "terraform"
+    ],
+    "Puppet": [
+        "puppet"
+    ],
+    "Chef": [
+        "chef"
+    ],
+    "Vagrant": [
+        "vagrant"
+    ],
+    "Nagios": [
+        "nagios"
+    ],
+    "Prometheus": [
+        "prometheus"
+    ],
+    "Grafana": [
+        "grafana"
+    ],
+    "Azure": [
+        "azure",
+        "microsoft azure"
+    ],
+    "Google Cloud Platform": [
+        "gcp",
+        "google cloud",
+        "google cloud platform"
+    ],
+    "Heroku": [
+        "heroku"
+    ],
+    "DigitalOcean": [
+        "digitalocean"
+    ],
+    "Vercel": [
+        "vercel"
+    ],
+    "Netlify": [
+        "netlify"
+    ],
+    "Maven": [
+        "maven",
+        "mvn"
+    ],
+    "Gradle": [
+        "gradle"
+    ],
+    "npm": [
+        "npm"
+    ],
+    "yarn": [
+        "yarn"
+    ],
+    "pip": [
+        "pip"
+    ],
+    "Homebrew": [
+        "homebrew",
+        "brew"
+    ],
+    "MongoDB Compass": [
+        "mongodb compass"
+    ],
+    "pgAdmin": [
+        "pgadmin"
+    ],
+    "MySQL Workbench": [
+        "mysql workbench"
+    ],
+    "Adobe XD": [
+        "adobe xd",
+        "xd"
+    ],
+    "Sketch": [
+        "sketch"
+    ],
+    "Canva": [
+        "canva"
+    ],
+    "Slack": [
+        "slack"
+    ],
+    "Trello": [
+        "trello"
+    ],
+    "Asana": [
+        "asana"
+    ],
+    "Zoom": [
+        "zoom"
+    ],
+    "Microsoft Teams": [
+        "microsoft teams",
+        "teams"
+    ]
+}

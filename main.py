@@ -2,6 +2,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from extractor import extract_text
 from cleaner import clean_text
 from parser import extract_sections
+from analyzer import run_full_analysis
 import logging
 
 app = FastAPI(title="Resume Intake Service")
@@ -36,12 +37,16 @@ async def upload_resume(file: UploadFile = File(...)):
         
         # 5. Extract Sections
         sections = extract_sections(cleaned_text)
+
+        # 6. Advanced Analysis (Spell check, Skills, Roles)
+        analysis_results = run_full_analysis(cleaned_text)
         
         return {
             "filename": file.filename,
             "extracted_text_length": len(cleaned_text),
             "cleaned_text": cleaned_text,
-            "sections": sections
+            "sections": sections,
+            "analysis": analysis_results
         }
         
     except ValueError as e:
