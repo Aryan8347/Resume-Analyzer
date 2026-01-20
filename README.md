@@ -1,4 +1,4 @@
-# Resume Intelligence System (BreachBunny Edition) 🐰💀
+# Resume Analyzing System 
 
 > **Next-Gen Resume Analysis & Optimization Platform**
 > A high-performance, AI-driven resume analyzer offering deep insights, skill gap detection, and role matching, wrapped in a premium "Cyber-Industrial" aesthetic.
