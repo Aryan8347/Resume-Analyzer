@@ -16,7 +16,7 @@
 - **Secure Authentication**: Unified Login/Register system using **JWT** and **SQLite** encrypted database.
 
 ### Immersive UI (Frontend)
-- **"BreachBunny" Aesthetic**: Dark Charcoal theme (`#0a0a0a`) with Neon Pink accents (`#ff07fe`).
+- Dark Charcoal theme (`#0a0a0a`) with Neon Pink accents (`#ff07fe`).
 - **Interactive Visuals**:
     - "Neon Matrix" Skill Visualization.
     - 3D-style Glassmorphism cards.
@@ -46,7 +46,7 @@
 ---
 
 
-```
+
 
 ## 🔒 Security
 
