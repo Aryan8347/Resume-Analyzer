@@ -91,7 +91,19 @@ def map_job_roles(detected_skills: list) -> dict:
             roles_score[role] = match_count
             
     # Normalize scores or just return recommended based on threshold
-    recommended = [role for role, score in roles_score.most_common(3)]
+    recommended = []
+    
+    for role, score in roles_score.most_common(3):
+        required_skills = JOB_ROLE_RULES[role]
+        matched = list(skills_set.intersection(required_skills))
+        total_required = len(required_skills)
+        percentage = int((score / total_required) * 100) if total_required > 0 else 0
+        
+        recommended.append({
+            "role": role,
+            "match_percentage": percentage,
+            "matched_skills": matched
+        })
     
     return {
         "recommended_roles": recommended
@@ -141,7 +153,11 @@ def analyze_skill_gap(detected_skills: list, preferred_role: str, recommended_ro
     
     # 2. Fallback to top recommended role
     if not target_role and recommended_roles:
-        target_role = recommended_roles[0]
+        top_rec = recommended_roles[0]
+        if isinstance(top_rec, dict):
+            target_role = top_rec.get("role")
+        else:
+            target_role = top_rec
         
     missing_skills = []
     if target_role and target_role in JOB_ROLE_RULES:
@@ -154,7 +170,56 @@ def analyze_skill_gap(detected_skills: list, preferred_role: str, recommended_ro
         "missing_skills": missing_skills
     }
 
-def run_full_analysis(text: str) -> dict:
+def check_ats_compatibility(text: str, file_size: int, detected_count: int) -> dict:
+    """
+    Evaluates resume for ATS readability parsing risks.
+    """
+    issues = []
+    recommendations = []
+    score = 100
+    
+    # 1. Image-based Risk (Large size but low text)
+    if len(text) < 500 and file_size > 2 * 1024 * 1024:
+        issues.append("Possibility of image-based resume (low text count, high file size).")
+        recommendations.append("Ensure resume text is selectable and not an image.")
+        score -= 50
+    
+    # 2. Special Symbols check
+    symbols = ['★', '▪', '●', '♦', '➢']
+    found_symbols = [s for s in symbols if s in text]
+    if len(found_symbols) > 0:
+        issues.append(f"Special symbols detected: {', '.join(found_symbols)}.")
+        recommendations.append("Replace symbols with standard bullets or dashes.")
+        score -= 10
+        
+    # 3. Header Check
+    required_headers = ["Experience", "Education", "Skills"]
+    missing_headers = [h for h in required_headers if h.lower() not in text.lower()]
+    if missing_headers:
+        issues.append(f"Missing standard headers: {', '.join(missing_headers)}.")
+        recommendations.append("Use standard section titles like 'Experience', 'Education', and 'Skills'.")
+        score -= 15
+        
+    # 4. Keyword/Content Density
+    if detected_count < 3:
+        issues.append("Very few skills detected.")
+        recommendations.append("Add more relevant technical keywords.")
+        score -= 20
+        
+    # 5. Table detection (heuristic: many pipes or dashes aligned)
+    # This is a weak check on raw text but if extraction preserved layout it might trigger.
+    if text.count('|') > 10 or text.count('+--') > 2:
+        issues.append("Possible table structures or complex formatting.")
+        recommendations.append("Avoid using tables for layout. Use columns or simple formatting.")
+        score -= 20
+        
+    return {
+        "score": max(0, score),
+        "issues": issues,
+        "recommendations": recommendations
+    }
+
+def run_full_analysis(text: str, file_size: int = 0) -> dict:
     """
     Orchestrates the full analysis pipeline.
     """
@@ -174,9 +239,12 @@ def run_full_analysis(text: str) -> dict:
     
     skill_gap = analyze_skill_gap(all_detected_items, preferred_role, recommended)
     
+    ats_result = check_ats_compatibility(text, file_size, len(all_detected_items))
+    
     return {
         "skill_extraction": skills_data,
         "job_role_mapping": roles,
         "preferred_role_detection": pref_role_data,
-        "skill_gap_analysis": skill_gap
+        "skill_gap_analysis": skill_gap,
+        "ats_compatibility": ats_result
     }

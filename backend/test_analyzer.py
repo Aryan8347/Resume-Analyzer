@@ -36,6 +36,16 @@ class TestAnalyzer(unittest.TestCase):
         
         # Let's verify the key exists first
         self.assertIn("skill_gap_analysis", result)
+        self.assertIn("ats_compatibility", result)
+        
+        # Check ATS Score
+        # The text is very short (< 500 chars), might trigger image-based warning if file_size was simulated large,
+        # but here file_size default is 0 so it shouldn't trigger "image based".
+        # It has "Experience" and "Skills" headers implicitly via parsing (or not? text has them).
+        
+        ats = result["ats_compatibility"]
+        self.assertGreaterEqual(ats["score"], 0)
+        self.assertIsInstance(ats["issues"], list)
 
 if __name__ == "__main__":
     unittest.main()

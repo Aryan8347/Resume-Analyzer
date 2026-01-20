@@ -8,3 +8,7 @@ pdf2image
 Pillow
 requests
 pyspellchecker
+sqlalchemy
+passlib[bcrypt]
+python-jose[cryptography]
+email-validator
