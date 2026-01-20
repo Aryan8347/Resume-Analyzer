@@ -29,7 +29,7 @@
 ## 🛠 Tech Stack
 
 ### Frontend
-- **Framework**: React 18 + Vite
+- **Framework**: React 18
 - **Styling**: Tailwind CSS + PostCSS
 - **Animation**: Framer Motion
 - **Icons**: Lucide React
@@ -45,55 +45,7 @@
 
 ---
 
-## 📦 Installation & Setup
 
-### Prerequisites
-1.  **Python 3.10+**
-2.  **Node.js 18+**
-3.  **Ollama**: Installed and running [Download Ollama](https://ollama.com/).
-    - Pull the model: `ollama pull llama3.2`
-
-### 1. Backend Setup
-```powershell
-cd backend
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r ../requirements.txt
-
-# Start the Server (Port 8001)
-python main.py
-```
-
-### 2. Frontend Setup
-Open a new terminal:
-```powershell
-cd frontend
-npm install
-npm run dev
-```
-Access the application at: **http://localhost:5173**
-
----
-
-## 📂 Project Structure
-
-```
-resume_project/
-├── backend/                # Python FastAPI Server
-│   ├── main.py             # Entry point & API Routes
-│   ├── auth_lib.py         # Auth, Database, & User Models
-│   ├── processor.py        # Resume Extraction & Parsing Logic
-│   ├── analyzer.py         # AI Analysis Logic
-│   └── sql_app.db          # Local Database
-│
-├── frontend/               # React Application
-│   ├── src/
-│   │   ├── pages/          # Login, Upload, Dashboard, Landing
-│   │   ├── components/     # Reusable UI Elements
-│   │   └── api/            # Axios Client
-│   └── tailwind.config.js  # Theme Configuration
-│
-└── requirements.txt        # Python Dependencies
 ```
 
 ## 🔒 Security
